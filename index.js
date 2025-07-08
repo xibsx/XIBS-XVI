@@ -1,33 +1,29 @@
-const express = require('express');
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.get('/', (req, res) => {
-  res.send('🤖 WhatsApp bot is running.');
-});
-
-app.listen(port, () => console.log(`🟢 Web server listening on port ${port}`));
-
 const client = new Client({
-  authStrategy: new LocalAuth()
+    authStrategy: new LocalAuth(),
+    puppeteer: {
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    }
 });
 
 client.on('qr', qr => {
-  qrcode.generate(qr, { small: true });
-  console.log("📱 Scan this QR to connect.");
+    qrcode.generate(qr, { small: true });
+    console.log('QR CODE RECEIVED. SCAN THIS!'); // Ujumbe rahisi wa kukusaidia kuona
 });
 
 client.on('ready', () => {
-  console.log('✅ Bot is ready!');
+    console.log('Client is ready!');
+    console.log('Bot is now connected to WhatsApp. Ready to receive messages.');
 });
 
 client.on('message', msg => {
-  if (msg.body.toLowerCase() === 'hi') {
-    msg.reply('Hello from XIBS XVI bot running on Heroku!');
-  }
+    if (msg.body === '!test') {
+        msg.reply('Hello! Your simple bot is working.');
+    } else if (msg.body === '!ping') {
+        msg.reply('Pong!');
+    }
 });
 
 client.initialize();
