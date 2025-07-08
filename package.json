@@ -1,14 +1,19 @@
 {
-  "name": "xibs-xvi-bot",
+  "name": "simple-xibs-bot",
   "version": "1.0.0",
-  "description": "XIBS XVI WhatsApp Bot",
+  "description": "Simple bot for testing purposes.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.18.0",
-    "qrcode-terminal": "^0.12.0",
-    "whatsapp-web.js": "^1.21.0"
+    "whatsapp-web.js": "1.23.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
