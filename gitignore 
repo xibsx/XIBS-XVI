@@ -1,5 +1,27 @@
+   # Dependencies za Node.js
 node_modules/
-.session/
+
+# Faili za session za WhatsApp-Web.js
 .wwebjs_auth/
-.DS_Store
+session.json
+*.session
+*.data.json
+
+# Faili za logi
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Faili za mazingira (Environment variables)
 .env
+.env.local
+
+# Folda za build/output
+dist/
+build/
+public/
+
+# Mengineyo
+.DS_Store
+.vscode/
