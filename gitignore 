@@ -1,3 +1,5 @@
-node_modules
-.session
-.wwebjs_auth
+node_modules/
+.session/
+.wwebjs_auth/
+.DS_Store
+.env
