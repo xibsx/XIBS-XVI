@@ -8,5 +8,5 @@ ON-AIR
 - Auto reply to "hi"
 - Scannable QR
 - Ready to host on Heroku
--work on 
+- work on 
 ```hi```
